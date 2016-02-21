@@ -8,7 +8,6 @@ class CustomersController < ApplicationController
 
   def new
    @customer = Customer.new
-   @companies = Company.all
   end
 
   def create
@@ -21,7 +20,6 @@ class CustomersController < ApplicationController
   end
 
   def edit
-    @companies = Company.all
   end
 
   def update
