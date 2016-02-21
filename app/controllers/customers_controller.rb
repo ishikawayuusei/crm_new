@@ -33,6 +33,9 @@ class CustomersController < ApplicationController
   end
 
   def show
+    @customer = Customer.find(params[:id])
+    @comment = Comment.new #これをform_forで使う
+    @comments = Comment.where(customer_id: params[:id].to_i)
   end
 
   def destroy

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :customers
+  resources :comments, only: [:create, :destroy]
+  #post '/comments' => 'comments#create'
 
   root 'customers#index'
 

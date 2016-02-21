@@ -16,16 +16,13 @@
       <% if user_signed_in? %>
           <li><%= link_to '設定変更', edit_user_registration_path %></li>
            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-           <li><%= link_to '編集', destroy_user_session_path, method: :delete %></li>
-
+            <p class="navbar-text navbar-right"><%= current_user. full_name %>さんでログイン中</p>
       <% else %>
           <li><%= link_to '新規登録', new_user_registration_path %></li>
            <li><%= link_to 'ログイン', new_user_session_path %></li>
       <% end %>
       </ul>
-      <% if user_signed_in? %>
-       <p class="navbar-text navbar-right"><%= current_user. full_name %>さんでログイン中</p>
-     <% end %>
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
